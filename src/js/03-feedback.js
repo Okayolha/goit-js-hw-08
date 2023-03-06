@@ -22,8 +22,13 @@ const getFeedBack = function () {
   feedbackMessage.value = data.message;
 };
 
+
 const submit = function (evt) {
   evt.preventDefault();
+  if (!feedbackInput.value || !feedbackMessage.value) {
+    alert("Будь ласка, заповніть поля електронної пошти та повідомлення!");
+    return;
+  }
   console.log({
     email: feedbackInput.value,
     message: feedbackMessage.value,
